@@ -1,0 +1,111 @@
+🚀 B Portfolio Guide  
+> A complete step-by-step guide to run and customize your 3D React portfolio. For beginners — no coding required.
+
+✅ Step 1: Install Required Tools  
+Before starting, make sure you have:  
+- Node.js (LTS): https://nodejs.org/  
+- Visual Studio Code: https://code.visualstudio.com/  
+
+✅ Step 2: Set Up the Project (ZIP Version)  
+1. Download and extract the ZIP file  
+2. Rename the folder if you want (e.g., b-portfolio)  
+3. Open the folder in Visual Studio Code  
+4. In VS Code, open a terminal: Terminal → New Terminal  
+5. Run this command to install all required packages:  
+
+   npm install  
+
+✅ Step 3: Customize Your Portfolio Content  
+🛠 All main content is editable in one file:  
+
+📂 src/constants/index.js  
+
+You can customize:  
+- 🔗 Navigation (navLinks)  
+- 💼 Projects (myProjects)  
+- 🧠 Work Experience (workExperiences)  
+- 💬 Client Testimonials (clientReviews)  
+- 🎯 3D Layout & Animation (calculateSizes)  
+
+Example:  
+export const navLinks = [  
+  {  
+    id: 1,  
+    name: 'Home',  
+    href: '#home',  
+  },  
+];  
+
+🧑‍🎨 Change Your Name & Headline  
+Edit your intro and name in:  
+
+📂 src/sections/Hero.jsx  
+
+Example:  
+<p>Hi, I'm Khairul Islam B</p>  
+<p>I build modern, animated, 3D websites</p>  
+
+🔰 Change Navbar Brand Name  
+Edit your portfolio name (brand title/logo text) in:  
+
+📂 src/sections/Navbar.jsx  
+
+Example:  
+<a>Khairul Islam B | B</a>  
+
+
+
+📩 Step 4: Set Up EmailJS for Contact Form  
+To make your contact form work, you need to connect EmailJS.
+
+1. Go to https://www.emailjs.com and create an account  
+2. Create a service, template, and get your Public Key  
+3. Create a .env file in the root of your project and add:
+
+VITE_APP_EMAILJS_SERVICE_ID=your_service_id  
+VITE_APP_EMAILJS_TEMPLATE_ID=your_template_id  
+VITE_APP_EMAILJS_PUBLIC_KEY=your_public_key  
+
+
+4. Now go to 📂 src/sections/Contact.jsx and make sure it uses:
+
+emailjs.send(  
+  import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,  
+  import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,  
+  {
+    from_name: form.name,  
+    to_name: 'Your Name',  
+    from_email: form.email,  
+    to_email: 'your@email.com',  
+    message: form.message,  
+  },  
+  import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY  
+);
+
+📌 That’s it! Now your contact form will send real emails 🚀
+
+
+🚀 Step 5: Run the Project Locally  
+After installation and customization:  
+
+👉 Run this command in terminal:  
+   npm run dev  
+
+Then open your browser and go to:  
+👉 http://localhost:5173  
+
+🧾 Full Command List  
+npm install     # Install dependencies  
+npm run dev     # Start the development server  
+
+
+🏁 You're Done!  
+✅ No coding required  
+✅ Easy content customization  
+✅ Editable name, intro & navbar  
+✅ EmailJS contact form support  
+✅ Fully responsive 3D portfolio  
+✅ Just one command to launch!  
+
+Built with ❤️ by B
+ 
